@@ -4,8 +4,8 @@ A lightweight MVP that generates technical interview questions using AI. Built f
 
 ## Links
 
-- **Live Vercel URL**: [Coming Soon]
-- **Loom Video**: [Coming Soon]
+- **Live Vercel URL**: [https://hrtech-alpha.vercel.app/index.html](https://hrtech-alpha.vercel.app/index.html)
+- **Loom Video**: [https://www.loom.com/share/34de1f79995a483fb29f18c4aae7acf3](https://www.loom.com/share/34de1f79995a483fb29f18c4aae7acf3)
 
 ## Tech Stack
 
