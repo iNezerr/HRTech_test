@@ -29,7 +29,14 @@ class QuestionResponse(BaseModel):
 @app.post("/api/generate")
 async def generate_questions(request: JobRequest) -> QuestionResponse:
     try:
-        model = genai.GenerativeModel("gemini-2.5-flash")
+        generation_config = genai.GenerationConfig(
+            temperature=0.7,
+            top_p=0.8,
+            top_k=40,
+            max_output_tokens=1024,
+            response_mime_type="application/json"
+        )
+        model = genai.GenerativeModel("gemini-2.5-flash", generation_config=generation_config)
         prompt = f"You are an HR expert. The job title is {request.job_title}. Generate exactly 3 thoughtful interview questions for this specific role. Return the output ONLY as a raw JSON array of 3 strings. Do not use markdown blocks. Do not include any other text."
         response = model.generate_content(prompt)
         questions = json.loads(response.text)
